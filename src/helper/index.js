@@ -12,6 +12,9 @@ export const handleIncomingBody = async (req, res) => {
         })
 
         req.on("end", ()=>{
+            if(!body){
+                body = "{}";
+            }
             body = JSON.parse(body)
             req.body = body
             resolve(body)

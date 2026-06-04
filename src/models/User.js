@@ -1,7 +1,8 @@
-import mongoose, { mongo, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 const userSchema = new Schema({
     email : {
         type : String,
+        unique : true,
         required : true,
     },
     role : {
